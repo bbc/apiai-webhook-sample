@@ -27,6 +27,12 @@ restService.post('/hook', function (req, res) {
 
                 if (requestBody.result.action) {
                     speech += 'action: ' + requestBody.result.action;
+
+
+                    let action = requestBody.result.action;
+                    if (action == "input.unknown") {
+                        speech = '<speak><audio src="https://s3-eu-west-1.amazonaws.com/irfs-gojetters-prototype/gojetters_UbercornDidntHear_11.mp3"></speak>';
+                    }
                 }
             }
         }
