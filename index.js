@@ -30,8 +30,11 @@ restService.post('/hook', function (req, res) {
 
 
                     let action = requestBody.result.action;
+                    if (action == "input.welcome") {
+                        speech = '<speak><audio src="https://s3-eu-west-1.amazonaws.com/irfs-gojetters-prototype/gojetters_IntroAndTheme_1.mp3">Welcome</audio></speak>';
+                    }
                     if (action == "input.unknown") {
-                        speech = '<speak><audio src="https://s3-eu-west-1.amazonaws.com/irfs-gojetters-prototype/gojetters_UbercornDidntHear_11.mp3"></speak>';
+                        speech = '<speak><audio src="https://s3-eu-west-1.amazonaws.com/irfs-gojetters-prototype/gojetters_UbercornDidntHear_11.mp3">Error</audio></speak>';
                     }
                 }
             }
