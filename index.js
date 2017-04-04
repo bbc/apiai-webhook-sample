@@ -42,7 +42,8 @@ restService.post('/hook', function (req, res) {
         return res.json({
             speech: speech,
             displayText: speech,
-            source: 'apiai-webhook-sample'
+            source: 'apiai-webhook-sample',
+            data: { 'google': {'is_ssml': true } }
         });
     } catch (err) {
         console.error("Can't process request", err);
